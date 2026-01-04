@@ -28,3 +28,33 @@ Try small examples like predicting house prices with simple linear algebra.
 # linear Algebra is the language of ML 
 في Deep Learning كل البيانات وكل العمليات الحسابية تتحول إلى مصفوفات Matrices أو تينسورات Tensors ؟! لان الحواسيب تتعامل مع الأرقام بشكل أفضل عندما تكون في شكل شبكات ثنائية الأبعاد أو متعددة الأبعاد 
 
+# Dataset = Matrix
+
+## Every Dataset is a Matrix
+كل Dataset يتحول لمصفوفة لانه يسهل التعامل مع البيانات جميعها دفعة واحدة ويتيح العمليات الرياضية بكفاءة
+---
+
+### Example Matrix X
+
+| Sample | Feature 1 | Feature 2 | Feature 3 |
+|--------|-----------|-----------|-----------|
+| 1      | x11       | x12       | x13       |
+| 2      | x21       | x22       | x23       |
+| 3      | x31       | x32       | x33       |
+
+**Structure:**
+
+- **Rows** = Individual samples / data points
+- **Columns** = Features / attributes
+- `X ∈ ℝ^(n×m)` → n samples, m features
+
+---
+
+### Why Matrices?
+
+- Process **all data at once**
+  بدل حساب كل عينة على حدة، يمكن للـ DL model التعامل مع كل البيانات دفعة واحدة باستخدام مصفوفة
+- Leverage **GPU acceleration**
+GPUs مصممة لمعالجة العمليات على المصفوفات بسرعة عالية، وبالتالي التدريب يصبح أسرع بكثير
+- Apply **mathematical operations**
+كل العمليات الرياضية مثل: الجمع، الضرب، الضرب العنصري، ضرب المصفوفات، يمكن تطبيقها مباشرة على المصفوفة
