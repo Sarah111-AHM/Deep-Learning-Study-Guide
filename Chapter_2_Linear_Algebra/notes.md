@@ -29,7 +29,7 @@ Try small examples like predicting house prices with simple linear algebra.
 في Deep Learning كل البيانات وكل العمليات الحسابية تتحول إلى مصفوفات Matrices أو تينسورات Tensors ؟! لان الحواسيب تتعامل مع الأرقام بشكل أفضل عندما تكون في شكل شبكات ثنائية الأبعاد أو متعددة الأبعاد 
 
 # Dataset = Matrix
-
+![](https://drive.google.com/uc?export=view&id=1xYlFbGUkWyb8lJH2br96CkuD1oJQ9M0Q)
 ## Every Dataset is a Matrix
 كل Dataset يتحول لمصفوفة لانه يسهل التعامل مع البيانات جميعها دفعة واحدة ويتيح العمليات الرياضية بكفاءة
 ---
@@ -58,3 +58,124 @@ Try small examples like predicting house prices with simple linear algebra.
 GPUs مصممة لمعالجة العمليات على المصفوفات بسرعة عالية، وبالتالي التدريب يصبح أسرع بكثير
 - Apply **mathematical operations**
 كل العمليات الرياضية مثل: الجمع، الضرب، الضرب العنصري، ضرب المصفوفات، يمكن تطبيقها مباشرة على المصفوفة
+# Machine Learning = Matrix Operations
+
+---
+
+## Linear Regression
+
+\[
+\hat{y} = X W + \hat{h}
+\]
+
+- **X**: Data matrix (n samples × m features)  
+- **W**: Weight vector (m × 1)  
+- **b**: Bias (scalar)  
+- **ŷ**: Predictions (n × 1)  
+
+> Pure matrix multiplication!
+
+---
+
+## PCA (Dimensionality Reduction)
+
+\[
+X_{\text{new}} = X V
+\]
+
+- **X**: Original data matrix  
+- **V**: Eigenvectors (principal components)  
+- **X_new**: Transformed data  
+
+> Eigenvalue decomposition!
+
+---
+
+## Neural Networks
+
+\[
+h = a(Wx + b)
+\]
+
+- **W**: Weight matrix  
+- **x**: Input vector  
+- **a**: Activation function (non-linear)  
+- **h**: Hidden layer output  
+
+> Stack of matrix operations!
+
+---
+
+## Distance / Similarity
+
+- **Norm**: Vector length  
+- **x, y**: Data points (vectors)  
+- **d**: Distance  
+
+> Vector operations!
+
+---
+
+## Deep Learning Pipeline
+
+From Data → Predictions:
+
+1. **Raw Data** → Matrix X  
+2. **Preprocess** → Scale / Transform  
+3. **Model** → Matrix Operations  
+4. **Predictions** → Vector ŷ
+
+---
+
+## Preprocessing
+
+- **Scaling**: \(X = (X - \mu) / \alpha\)  
+- **Normalization**: \(X' = X / ||X||\)  
+- **Whitening**: \(X^{\text{whitened}} = XV\)
+
+---
+
+## Training
+
+- **Forward pass**: \(\hat{y} = f(XW)\)  
+- **Loss**: \(L = ||y - \hat{y}||^2\)  
+- **Gradient**: \(\nabla W = X^T \Delta\)  
+- **Update**: \(W = W - \alpha \nabla W\)
+
+> Inference:  
+> Compute \(\hat{y} = XW + b\) → Output prediction!
+
+---
+
+## Why Deep Learning Needs Linear Algebra
+
+### GPU Acceleration
+
+- GPUs have thousands of cores → parallel matrix operations  
+- Example: \(1000 \times 1000\) matrix × \(1000 \times 1000\) → 1 billion multiplications  
+  - **CPU**: ~10 seconds  
+  - **GPU**: ~0.01 seconds → 1000× faster!
+
+### Massive Scale
+
+| Model      | Parameters |
+|------------|------------|
+| ResNet-50  | 25M        |
+| BERT       | 340M       |
+| GPT-3      | 1.758B     |
+| GPT-4      | 1.7T       |
+
+> Each parameter = a matrix element → training involves billions of multiplications and millions of gradient updates
+
+---
+
+> All in linear algebra!
+# The Bottom Line
+
+**Deep Learning = Optimized Linear Algebra at Scale**
+
+**Key Insight:**  
+Understanding linear algebra = Understanding how deep learning actually works
+
+**Rule of Thumb:**  
+You can't improve what you don't understand
